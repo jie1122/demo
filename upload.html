@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <input type="text" id="_text">
+  </div>
+  <div>
+    <input type="file" id= "_file" multiple >
+  </div>
+  <div>
+    <img src="" alt="" id="_img">
+  </div>
+  <div>
+    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+LW1vY2twbHVzLTwvdGl0bGU+CiAgICA8ZyBpZD0i6aG16Z2iLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJpUGhvbmUtOOWkh+S7vS0xNzUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC02NzAuMDAwMDAwLCAtNTE3LjAwMDAwMCkiPgogICAgICAgICAgICA8ZyBpZD0i566t5aS0aWNvbi/liJfooajpgInmi6kiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY3MC4wMDAwMDAsIDUxNy4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxyZWN0IGlkPSLnn6nlvaIiIGZpbGw9IiNEOEQ4RDgiIG9wYWNpdHk9IjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PC9yZWN0PgogICAgICAgICAgICAgICAgPHBvbHlsaW5lIGlkPSLot6/lvoQiIHN0cm9rZT0iIzk3OTc5NyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwLjAwMDAwMCwgMTAuMDAwMDAwKSByb3RhdGUoLTMxNS4wMDAwMDApIHRyYW5zbGF0ZSgtMTAuMDAwMDAwLCAtMTAuMDAwMDAwKSAiIHBvaW50cz0iNCA0IDE2IDQgMTYgMTYiPjwvcG9seWxpbmU+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==" alt="">
+  </div>
+  <script>
+    var _text = document.getElementById('_text')
+    var _file = document.getElementById('_file')
+    var _img = document.getElementById('_img')
+
+
+
+
+
+
+    // _file.onchange=function(){
+      // 通过FIleReader 创建文件ur
+      // readAsDataURL为异步方法需在onload指定回调
+
+      // var reader = new FileReader()
+    //   reader.readAsDataURL(_file.files[0])
+    //   reader.onload = function(e){
+    //     console.log(e)
+    //     _img.src =e.target.result
+    //   }
+    // }
+
+
+    _file.onchange=function(){
+      // 通过URL.createObjectURL创建文件url
+      // 同步方法可直接接收结果
+      _img.src = URL.createObjectURL(_file.files[0])
+
+    }
+
+  </script>
+</body>
+</html>

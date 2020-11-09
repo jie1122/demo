@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="./province.js"></script>
+  <style>
+    .selector{
+      display: flex;
+    }
+    .province_container,.city_container,.area_container{
+      width: 33%;
+      border: 1px solid black;
+      margin: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="selector">
+      <select
+      class="province_container"
+      v-model="selected_province"
+      v-on:change='provinceChange'
+      >
+        <option
+        v-for="(item, index) in provinceList"
+        v-bind:value='index'
+        >
+          {{item.name}}
+        </option>
+      </select>
+
+      <select class="city_container"
+      v-model="selected_city"
+      @change="cityChange"
+      >
+        <option
+        v-for="(item,index) in cityList"
+        :value='index'
+        >
+          {{item.name}}
+        </option>
+      </select>
+
+      <select class="area_container"
+      v-model='selected_area'
+      @change='areaChange'
+      >
+        <option
+        v-for="(item,index) in areaList"
+        :value='index'
+        >
+        {{item}}
+        </option>
+      </select>
+    </div>
+    <div>
+      {{provinceList[selected_province].name+'-'+cityList[selected_city].name+'-'+areaList[selected_area] }}
+    </div>
+  </div>
+
+  <script>
+    console.dir(region)
+    var app = new Vue({
+      el:'#app',
+      data:{
+        provinceList:region,
+        cityList:region[0].city,
+        areaList:region[0].city[0].area,
+        selected_province:0,
+        selected_city:0,
+        selected_area:0
+      },
+      methods: {
+        provinceChange(){
+          console.log(this.selected_province)
+          this.cityList =this.provinceList[this.selected_province].city
+          this.areaList = this.cityList[0].area
+
+        },
+        cityChange(){
+          this.areaList = this.cityList[this.selected_city].area
+        },
+        areaChange(){
+          console.log('complete')
+        }
+      },
+    })
+    console.log(app)
+  </script>
+</body>
+</html>

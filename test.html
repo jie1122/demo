@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+<!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+
+
+<style type="text/css">
+
+body{
+  padding: 0;
+  margin: 0;
+
+}
+.container{
+  display: flex;
+
+}
+.left,.right {
+  background-color: cyan;
+  width: 200px;
+  flex-shrink: 0;
+}
+.main{
+  border: 2px solid;
+  flex-grow: 1;
+
+}
+.main li:nth-last-child(-n+4){
+  color: cyan;
+}
+.flextest{
+  display: flex;
+
+}
+.flex1{
+  flex-grow: 2;
+  background-color:wheat;
+
+}
+.flex2{
+  flex-grow: 5;
+  background-color: blue;
+}
+.center_test{
+  height: 200px;
+   text-align: center;
+  /* line-height: 200px; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.center_test span{
+  line-height: 200px;
+  color: red;
+}
+
+</style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="left"></div>
+    <div class="main">
+
+      <div>
+        <input type="text" id="test" value=20 class="cont" style="color: red">
+      </div>
+      <div class='center_test'>
+        <span>asdjfoahdfaf</span>
+      </div>
+      <div class="flextest">
+        <div class="flex1">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+          <div>13</div>
+          <div>14</div>
+          <div>15</div>
+          <div>16</div>
+          <div>17</div>
+          <div>18</div>
+          <div>19</div>
+          <div>20</div>
+          <div>21</div>
+          <div>22</div>
+          <div>23</div>
+          <div>24</div>
+          <div>25</div>
+          <div>26</div>
+          <div>27</div>
+          <div>28</div>
+          <div>29</div>
+          <div>30</div>
+          <div>31</div>
+          <div>32</div>
+          <div>33</div>
+          <div>34</div>
+          <div>35</div>
+          <div>36</div>
+          <div>37</div>
+          <div>38</div>
+          <div>39</div>
+          <div>40</div>
+          <div>41</div>
+          <div>42</div>
+          <div>43</div>
+          <div>44</div>
+          <div>45</div>
+          <div>46</div>
+          <div>47</div>
+          <div>48</div>
+          <div>49</div>
+          <div>50</div>
+        </div>
+        <div class="flex2">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+          <div>13</div>
+          <div>14</div>
+          <div>15</div>
+          <div>16</div>
+          <div>17</div>
+          <div>18</div>
+          <div>19</div>
+          <div>20</div>
+          <div>21</div>
+          <div>22</div>
+          <div>23</div>
+          <div>24</div>
+          <div>25</div>
+          <div>26</div>
+          <div>27</div>
+          <div>28</div>
+          <div>29</div>
+          <div>30</div>
+          <div>31</div>
+          <div>32</div>
+          <div>33</div>
+          <div>34</div>
+          <div>35</div>
+          <div>36</div>
+          <div>37</div>
+          <div>38</div>
+          <div>39</div>
+          <div>40</div>
+          <div>41</div>
+          <div>42</div>
+          <div>43</div>
+          <div>44</div>
+          <div>45</div>
+          <div>46</div>
+          <div>47</div>
+          <div>48</div>
+          <div>49</div>
+          <div>50</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="right"></div>
+
+  </div>
+
+  <script>
+    var i = document.getElementById('test')
+
+
+
+
+
+// 链式调用
+  var obj={};
+  obj.a=function(){
+    console.log("a")
+    return this
+  }
+  obj.b=function(){
+    console.log("n")
+    return this
+  }
+  obj.a().b();
+
+  </script>
+<!--   <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.20/lodash.core.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js" integrity="sha256-ur/YlHMU96MxHEsy3fHGszZHas7NzH4RQlD4tDVvFhw=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@4.8.0/dist/echarts.min.js"></script> -->
+
+</body>
+
+</html>

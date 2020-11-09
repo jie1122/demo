@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+
+
+  <script>
+  // axios.interceptors.request.use( config=> {
+  //   config.headers.Authorization = 'test_token'
+  //   console.log(config)
+  //   return config
+  // })
+  axios.defaults.headers.common['Authorization'] = 'AUTH_TOKEN';
+
+  axios.get(
+    'https://api-hmugo-web.itheima.net/api/public/v1/goods/detail', {
+    params: {
+      goods_id: 5
+    }
+  })
+  .then(result=>{
+    console.log(result)
+  })
+
+  axios.post(
+    'https://api-hmugo-web.itheima.net/api/public/v1/users/wxlogin',{
+      params:{
+        code: "0630041w3qSJRU2Aa22w3sMCd320041P",
+        encryptedData: "MEIKJvzhFqz7D7/Ut/wIrFusBNCTxDRWlE/ylefCuYcQDKFH2uuMyaLKPtgclj+Mc5198EbC4S0NcJHOmLZRuiG3zx5yFqxYglWGpkIGNdTENeE0xuaFVpskA31aH97Kz5DyA0idZbTH50goz7U5h6/qyo8RdrWAXFej5Z15qcD8N0+PNonIbDzpndvayvRC+RxnsBVDkxzjU2iD6G2A+JR6o0Ydbqf+Q6/lG4zqvBQn1uMa5l1+wq9gqW0+fYAN2yQQ+8/YKW15XASX3ev0Ih6yVlX00ibC1mKBnGAAg2oSJUHEVVWMCXmE4zWFrDzIWi8M5H7+dMdD94Q78ahNh+pYl30nSQc9SygO6aqL+jGBoW7wTLZX+nmb5BDDjwlPaO3or61FC28VLehZ5W1DndV3iOUOY3QjmK55X/txGo45rnr1QPeKUS7enMj1uhIgnWczoh9LBSfbnq76xBmGmcZS+xfkCMmAumPwS4l2Do8=",
+        iv: "aa8Tv77cTbi1CVyBqvndFg==",
+        rawData: '{"nickName":"qwer","gender":1,"language":"en","city":"Luoyang","province":"Henan","country":"China","avatarUrl":"https://thirdwx.qlogo.cn/mmopen/vi_32/KcESJd5yPTuYI5nljLSFsDxibaNCXnj4k1GsaeQRkNajvGV6kVOHXpSXia8Gfv7N2RRHYZiaAEsiatcmaRkcFibcWBw/132"}',
+        signature: "6caa590f6916c5999051faab8cd82fe4045e1acd"
+      }
+    }
+  )
+  .then(res=>{
+    console.log(res)
+  })
+
+  foo(1,2)
+  </script>
+</body>
+</html>

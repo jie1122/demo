@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var score = 3.0
+    var star = [0,0,0,0,0]
+    for (let i = 0; i < score; i++) {
+     if(score - i>=1){
+       star[i] = 1
+     }else  {
+       star[i] = parseFloat((score - i).toFixed(1))
+     }
+
+    }
+    console.log(star)
+  </script>
+</body>
+</html>

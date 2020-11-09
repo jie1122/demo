@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function f2() {
+      console.log(this)
+      console.log('f22222222222')
+      f3()
+    }
+    function f3() {
+      console.log(this)
+      console.log('f333333333')
+    }
+    var obj = {
+      a:1,
+      f1: function () {
+        console.log(this)
+        console.log('f111111111111')
+        f2()
+      }
+    }
+    obj.f1()
+  </script>
+</body>
+</html>

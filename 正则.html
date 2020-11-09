@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let passwordPatt = /^\S{6,9}$/
+    var ret =  passwordPatt.test('123456789')
+    console.log(ret)
+
+    const regex1 = RegExp('foo*', 'g');
+    console.dir(regex1)
+    const str1 = 'table football, foosball';
+    let array1;
+    array1 = regex1.exec(str1)
+    console.log(array1)
+
+  </script>
+</body>
+</html>

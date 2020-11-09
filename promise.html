@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var p = new Promise((resolve)=>{
+      resolve('ppppppp')
+    })
+    var q = new Promise((resolve)=>{
+      resolve('qqqqqqqq')
+    })
+
+
+    p
+    .then((result)=>{
+      console.log('t111111----'+ result)
+      return q
+    })
+    .then((result)=>{
+      console.log('t2222222----'+ result)
+      return 'stringstring'
+    })
+    .then((result)=>{
+      console.log('t333333333----'+ result)
+      return p
+    })
+    .then()
+    .then((result)=>{
+      console.log('t555555555----'+ result)
+    })
+    .then((result)=>{
+      console.log('t6666666----'+ result)
+      return
+    })
+    .then((result)=>{
+      console.log('t777777----'+ result)
+
+    })
+
+
+  </script>
+</body>
+</html>

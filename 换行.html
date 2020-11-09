@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      width: 300px;
+      height: 300px;
+      margin:auto;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+  </div>
+  <script>
+    var el = document.querySelector('.container')
+    el.innerHTML = ` Et a occaecati 换行<br/> totam     换行<br/>omnis	&nbsp;	&nbsp;	&nbsp;换行<br/> ab incidunt non. Iste ut perferendis \n quae\n rat \n error pariatur et eum
+    utvoluptatem. Repellendus dolorum `
+    console.log(el.innerHTML)
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .container{
+      height: 600px;
+      width: 600px;
+      border: 1px solid black;
+      margin:auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="box" class="container">
+    <ul>
+      <li>第1个</li>
+      <li>第2个</li>
+      <li>第3个</li>
+      <li id="last">第4个</li>
+    </ul>
+  </div>
+  <script>
+
+    var box = document.getElementById('box')
+    var dd = document.createElement('input')
+    dd.value = '1234'
+    box.appendChild(dd)
+
+    var btn = document.createElement('button')
+    btn.innerHTML =" 1234+点我 "
+    btn.onclick=function(){
+      alert(this.innerHTML)
+    }
+    box.appendChild(btn)
+
+    for(let i=0;i<5;i++){
+      var pp = document.createElement('p')
+      pp.innerHTML = i+1
+      box.appendChild(pp)
+      pp.onclick = function(){
+        alert(i+1+'iii')
+        alert(this.innerHTML)
+      }
+    }
+
+    var last =document.querySelector ('#last')
+    last.onclick = function(){
+      document.write('<li>被覆盖？</li>')
+    }
+    // box.innerHTML = "被覆盖？"
+
+  </script>
+</body>
+</html>

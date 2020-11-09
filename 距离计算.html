@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    var EARTH_RADIUS = 6378137.0; //单位M
+    var PI = Math.PI;
+
+    function getRad(d){
+    return d*PI/180.0;
+    }
+
+    /**
+    * caculate the great circle distance
+    * @param {Object} lat1
+    * @param {Object} lng1
+    * @param {Object} lat2
+    * @param {Object} lng2
+    */
+    function getGreatCircleDistance(lat1,lng1,lat2,lng2){
+    var radLat1 = getRad(lat1);
+    var radLat2 = getRad(lat2);
+
+    var a = radLat1 - radLat2;
+    var b = getRad(lng1) - getRad(lng2);
+
+    var s = 2*Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) + Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2)));
+    s = s*EARTH_RADIUS/1000;
+    s = Math.round(s*10)/10;
+
+    return s;
+    }
+    var distance = getGreatCircleDistance(34.472326,113.839341,34.525227,113.861618)
+    console.log(distance)
+  </script>
+</body>
+</html>
